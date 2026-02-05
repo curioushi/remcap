@@ -1,0 +1,31 @@
+{
+  "name": "high_freq_text_workload",
+  "description": "High frequency text workload",
+  "duration_sec": 30,
+
+  "backend": {
+    "type": "rerun",
+    "server": {
+      "port": 9876
+    }
+  },
+
+  "clients": [
+    {
+      "language": "python",
+      "count": 10,
+      "data": {
+        "type": "text",
+        "size": 100
+      },
+      "frequency_hz": 1000
+    }
+  ],
+
+  "metrics": {
+    "server": {
+      "memory_sample_interval_ms": 100
+    },
+    "output_dir": "./results"
+  }
+}

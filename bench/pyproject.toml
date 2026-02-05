@@ -8,7 +8,7 @@ authors = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-    "rerun-sdk>=0.22",
+    "rerun-sdk>=0.29",
     "numpy",
     "psutil",
     "rich",
