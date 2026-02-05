@@ -1,0 +1,67 @@
+{
+  "name": "typical_workload",
+  "description": "Typical robotics workload: 4 cameras, 4+3 lidars, 20 text logs, 1 mesh",
+  "duration_sec": 60,
+
+  "backend": {
+    "type": "rerun",
+    "server": {
+      "port": 9876
+    }
+  },
+
+  "clients": [
+    {
+      "language": "python",
+      "count": 4,
+      "data": {
+        "type": "image",
+        "size": "2024x2024"
+      },
+      "frequency_hz": 2
+    },
+    {
+      "language": "python",
+      "count": 4,
+      "data": {
+        "type": "points3d",
+        "size": 200000
+      },
+      "frequency_hz": 2
+    },
+    {
+      "language": "python",
+      "count": 3,
+      "data": {
+        "type": "points3d",
+        "size": 20000
+      },
+      "frequency_hz": 10
+    },
+    {
+      "language": "python",
+      "count": 20,
+      "data": {
+        "type": "text",
+        "size": 150
+      },
+      "frequency_hz": 20
+    },
+    {
+      "language": "python",
+      "count": 1,
+      "data": {
+        "type": "mesh",
+        "size": 10000
+      },
+      "frequency_hz": 1
+    }
+  ],
+
+  "metrics": {
+    "server": {
+      "memory_sample_interval_ms": 100
+    },
+    "output_dir": "./results"
+  }
+}

@@ -1,0 +1,35 @@
+---
+description: remcap log server project context and coding standards
+alwaysApply: true
+---
+
+# remcap Project
+
+A centralized log server for robotics systems, similar to Foxglove/Rerun.
+
+## Architecture Overview
+
+- **Language**: Rust
+- **Communication**: gRPC for receiving logs from distributed nodes
+- **Output Format**: MCAP files
+- **Visualization**: Rerun (external)
+
+## Core Features
+
+1. **Log Collection**: Receive logs from multiple process nodes via gRPC
+2. **Data Aggregation**: Merge and organize logs from different sources
+3. **MCAP Export**: Save aggregated data as MCAP files
+4. **Future Goals**: Custom schemas, auto-packaging, auto-upload, remote config, RViz replacement
+
+## Subprojects
+
+- **bench/**: Python benchmark framework for log servers (Rerun, Foxglove)
+  - Run: `cd bench && uv sync && uv run python -m bench.runner --config configs/typical.json`
+
+## Coding Standards
+
+- Use idiomatic Rust patterns
+- Prefer async/await with tokio runtime
+- Use tonic for gRPC implementation
+- Handle errors with thiserror/anyhow
+- Write documentation comments for public APIs

@@ -1,0 +1,12 @@
+# Results directory (except .gitkeep)
+results/*
+!results/.gitkeep
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+
+# uv
+uv.lock

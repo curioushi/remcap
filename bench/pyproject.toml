@@ -1,0 +1,39 @@
+[project]
+name = "remcap-bench"
+version = "0.1.0"
+description = "Extensible benchmark framework for log servers (Rerun, Foxglove)"
+readme = "README.md"
+authors = [
+    { name = "Curioushi", email = "curioushi@163.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "rerun-sdk>=0.22",
+    "numpy",
+    "psutil",
+    "rich",
+    "click",
+    "pydantic>=2.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.1.0",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # Pyflakes
+    "I",      # isort
+    "C90",    # mccabe complexity
+    "UP",     # pyupgrade
+]
+ignore = [
+    "E501",   # line too long (handled by line-length)
+]
